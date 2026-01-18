@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Waruna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav" aria-label="Primary">
+    <div class="nav__inner">
+      <a href="#" class="nav__brand">FrontEnd Dev</a>
+
+      <ul class="nav__links" id="nav-links">
+        <li>
+          <a class="nav__link" href="#home">
+            <span class="nav__label">Home</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav__link" href="#about">
+            <span class="nav__label">About</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav__link" href="#skills">
+            <span class="nav__label">Skills</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav__link" href="#projects">
+            <span class="nav__label">Projects</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav__link" href="#contact">
+            <span class="nav__label">Contact</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav__actions">
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to dark mode"
+          aria-pressed="false"
+          data-theme-toggle
+        >
+          <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 14.5a8.5 8.5 0 0 1-10.9-9 8.5 8.5 0 1 0 10.9 9Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M12 3v2.5M12 18.5V21M4.5 12H2M22 12h-2.5M6 6l-1.75-1.75M19.75 19.75 18 18M6 18l-1.75 1.75M19.75 4.25 18 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+
+        <button class="nav__toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav__icon" aria-hidden="true">
+            <span class="nav__bar"></span>
+            <span class="nav__bar"></span>
+            <span class="nav__bar"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section id="home" class="hero">
+      <div class="hero__content">
+        <div class="intro-title">Front-End Web Developer</div>
+        <h1 class="hero__title">
+          Hi, I’m <span class="accent">Waruna</span> — I craft modern, <span class="accent-underline">responsive</span> web experiences.
+        </h1>
+        <p class="hero__desc">
+          I build fast, accessible interfaces with HTML, CSS, and JavaScript — focusing on UI/UX, responsive design, and clean, maintainable code.
+        </p>
+
+        <div class="hero__links" aria-label="Social links">
+          <button class="icon-btn" type="button" aria-label="GitHub">
+            <img src="images/icons/github.svg" alt="GitHub" />
+          </button>
+          <button class="icon-btn" type="button" aria-label="LinkedIn">
+            <img src="images/icons/linkedin.svg" alt="LinkedIn" />
+          </button>
+        </div>
+
+        <div class="hero__stats" aria-label="Highlights">
+          <span class="stat">10+ Projects</span>
+          <span class="stat-sep"></span>
+          <span class="stat">Responsive UI</span>
+          <span class="stat-sep"></span>
+          <span class="stat">Clean Code</span>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="blob" aria-hidden="true"></div>
+        <div class="sparkle" aria-hidden="true"></div>
+        <div class="card">
+          <div class="card__header">
+            <span class="dot dot--red"></span>
+            <span class="dot dot--yellow"></span>
+            <span class="dot dot--green"></span>
+            <span class="card__label">portfolio.js</span>
+          </div>
+          <div class="card__body">
+            <div class="code-line"><span class="code-key">const</span> <span class="code-var">name</span> = <span class="code-str">"Waruna"</span>;</div>
+            <div class="code-line"><span class="code-key">const</span> <span class="code-var">role</span> = <span class="code-str">"Front-End Developer"</span>;</div>
+            <div class="code-line"><span class="code-key">const</span> <span class="code-var">stack</span> = [<span class="code-str">"HTML"</span>, <span class="code-str">"CSS"</span>, <span class="code-str">"JavaScript"</span>];</div>
+            <div class="code-line"><span class="code-fn">ship</span>(<span class="code-var">stack</span>, <span class="code-str">"Accessible UI"</span>);</div>
+            <div class="code-line code-line--note">Currently learning: React / Python</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-indicator" aria-hidden="true">
+        <span class="scroll-arrow">↓</span>
+      </div>
+    </section>
+
+    <section id="about" class="page__section section-placeholder">About</section>
+    <section id="skills" class="page__section section-placeholder">Skills</section>
+    <section id="projects" class="page__section section-placeholder">Projects</section>
+    <section id="contact" class="page__section section-placeholder">Contact</section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
