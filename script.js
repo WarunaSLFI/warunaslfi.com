@@ -2,7 +2,7 @@ const root = document.documentElement;
 const nav = document.querySelector('.nav');
 const toggle = nav.querySelector('.nav__toggle');
 const navLinks = nav.querySelectorAll('.nav__link');
-const themeToggle = document.querySelector('[data-theme-toggle]');
+
 const brand = document.querySelector('.nav__brand');
 
 const setNavOpen = (isOpen) => {
@@ -61,34 +61,7 @@ const handleScroll = () => {
 handleScroll(); // run on load
 window.addEventListener('scroll', handleScroll, { passive: true });
 
-// Theme toggle (light <-> dark)
-const getStoredTheme = () => window.localStorage.getItem('theme');
-const storeTheme = (theme) => window.localStorage.setItem('theme', theme);
 
-const applyTheme = (theme) => {
-  root.setAttribute('data-theme', theme);
-  const isDark = theme === 'dark';
-  themeToggle?.setAttribute('aria-pressed', String(isDark));
-  themeToggle?.setAttribute(
-    'aria-label',
-    isDark ? 'Switch to light mode' : 'Switch to dark mode'
-  );
-};
-
-const initTheme = () => {
-  const stored = getStoredTheme();
-  const initialTheme = stored || 'dark';
-  applyTheme(initialTheme);
-};
-
-themeToggle?.addEventListener('click', () => {
-  const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-  const next = current === 'dark' ? 'light' : 'dark';
-  applyTheme(next);
-  storeTheme(next);
-});
-
-initTheme();
 
 // Brand text animation: reveal letters one-by-one, then hide from end
 const animateBrand = () => {
