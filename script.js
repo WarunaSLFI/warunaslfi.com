@@ -53,9 +53,16 @@ buttons.forEach((btn) => {
 });
 
 // Add solid background on scroll
+let isScrolling = false;
 const handleScroll = () => {
-  const scrolled = window.scrollY > 12;
-  nav.classList.toggle('nav--scrolled', scrolled);
+  if (!isScrolling) {
+    window.requestAnimationFrame(() => {
+      const scrolled = window.scrollY > 12;
+      nav.classList.toggle('nav--scrolled', scrolled);
+      isScrolling = false;
+    });
+    isScrolling = true;
+  }
 };
 
 handleScroll(); // run on load
