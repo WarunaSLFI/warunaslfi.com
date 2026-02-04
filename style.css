@@ -1183,8 +1183,20 @@ a {
 
 /* Mobile */
 @media (max-width: 768px) {
+  :root {
+    --page-pad: 20px;
+    /* Increased mobile padding for better readability */
+  }
+
+  .container {
+    padding-left: var(--page-pad);
+    padding-right: var(--page-pad);
+    width: 100%;
+    max-width: 100%;
+  }
+
   .nav__inner {
-    padding: 12px 18px;
+    padding: 12px var(--page-pad);
   }
 
   .nav__toggle {
@@ -1194,8 +1206,8 @@ a {
   .nav__links {
     position: absolute;
     top: 100%;
-    right: 14px;
-    left: 14px;
+    right: var(--page-pad);
+    left: var(--page-pad);
     flex-direction: column;
     gap: 6px;
     background: var(--card-bg);
@@ -1248,6 +1260,12 @@ a {
     padding-block: clamp(16px, 4vw, 22px);
   }
 
+  .hero__desc {
+    max-width: 100%;
+    /* Take full width */
+    font-size: 1.15rem;
+  }
+
   .hero__actions {
     flex-direction: row;
     flex-wrap: wrap;
@@ -1255,7 +1273,10 @@ a {
   }
 
   .btn {
-    width: auto;
+    width: 100%;
+    /* Full width boxes as requested */
+    max-width: 100%;
+    justify-content: center;
   }
 
   .about {
@@ -1270,12 +1291,23 @@ a {
   }
 
   .about__grid {
-    padding: 22px;
-    gap: 18px;
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .about__text p {
+    max-width: 100%;
+    /* Fill the length */
+    width: 100%;
   }
 
   .about__highlights {
     grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .about__highlights li {
+    width: 100%;
   }
 
   .profile-card {
@@ -1296,6 +1328,7 @@ a {
 
   .skills__controls {
     width: 100%;
+    display: flex;
   }
 
   .skills__filter {
@@ -1305,6 +1338,13 @@ a {
 
   #skills .skills__grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .skill-card {
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
   .projects__inner {
@@ -1313,10 +1353,14 @@ a {
 
   .projects__grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
+  .project-card,
   .project-card--featured {
+    width: 100% !important;
     grid-column: span 1;
+    box-sizing: border-box;
   }
 
   .skill-row {
@@ -1330,20 +1374,7 @@ a {
 }
 
 @media (max-width: 680px) {
-  #skills {
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    margin-top: var(--section-gap);
-  }
-
-  #skills .skills__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects__inner {
-    padding-block: clamp(20px, 5vw, 30px);
-  }
+  /* Unified with 768px query */
 }
 
 @media (prefers-reduced-motion: reduce) {
