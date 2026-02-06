@@ -365,3 +365,41 @@ const initContactForm = () => {
 };
 
 initContactForm();
+
+// Current Date and Time in Hero Section
+const initHeroTime = () => {
+  const timeEl = document.getElementById('current-time');
+  if (!timeEl) return;
+
+  const updateTime = () => {
+    const now = new Date();
+    // Format: "Mon, 06 Feb 09:28"
+    const options = {
+      weekday: 'short',
+      day: '2-digit',
+      month: 'short',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    };
+    // toLocaleTimeString might include seconds or be different based on locale/browser, 
+    // constructing manually for consistency if needed, but trying simple approach first.
+    // Actually, toLocaleDateString might be better for "Mon, 06 Feb" and toLocaleTimeString for time.
+    // Let's use a custom formatter to be safe and match "Mon 06 Feb 09:28"
+    const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+    const dayName = days[now.getDay()];
+    const dayNum = String(now.getDate()).padStart(2, '0');
+    const monthName = months[now.getMonth()];
+    const hours = String(now.getHours()).padStart(2, '0');
+    const mins = String(now.getMinutes()).padStart(2, '0');
+
+    timeEl.textContent = `${dayName}, ${dayNum} ${monthName} ${hours}:${mins}`;
+  };
+
+  updateTime(); // Initial run
+  setInterval(updateTime, 1000 * 60); // Update every minute
+};
+
+initHeroTime();
